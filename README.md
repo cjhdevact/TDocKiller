@@ -4,6 +4,32 @@
 转到[发布页](https://github.com/cjhdevact/TDocKiller/releases)下载程序或源代码。
 早期版本的源代码也在发布页里。
 
+------------
+
+程序截图：
+
+
+主程序界面
+
+
+横向：
+
+
+![主程序界面（横向深色）](Assets/ui1.png)      ![主程序界面（横向浅色）](Assets/ui1light.png)
+
+
+纵向：
+
+
+![主程序界面（纵向深色）](Assets/ui2.png)      ![主程序界面（纵向浅色）](Assets/ui2light.png)
+
+
+
+设置界面
+
+
+![设置界面（125%缩放）](Assets/uisetting.png)
+
 
 ------------
 

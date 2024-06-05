@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2023-2024 CJH.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>一键关闭课件小工具</displayName>
+  <description>一键关闭课件小工具</description>
+  <resources>
+    <stringTable>
+      <string id="TDocKiller">一键关闭课件小工具</string>
+      <string id="TDocKillerDisbFu">禁用一键关闭课件小工具的自定义功能</string>
+      <string id="TDocKillerDisbFu_Help">此策略控制一键关闭课件小工具自定义功能是否被禁用。
+
+注意：命令行的内容要优先于策略设置，在用户配置设置的策略优先级高于计算机配置里设置的策略，计算机配置里的策略对所有用户有效。（需要以管理员身份启动本程序以应用计算机配置里的策略，所以建议在用户配置设置策略）。一键关闭课件小工具版本须在1.0.4.24051以上才支持本策略。</string>
+      <string id="TDocKillerDisbFuTip">隐藏一键关闭课件小工具应用策略或以特殊模式（安全模式除外）启动后的横幅提示</string>
+      <string id="TDocKillerDisbFuTip_Help">此策略控制一键关闭课件小工具应用策略或以特殊模式（安全模式除外）启动后的横幅提示是否显示。
+
+注意：命令行的内容要优先于策略设置，在用户配置设置的策略优先级高于计算机配置里设置的策略，计算机配置里的策略对所有用户有效。（需要以管理员身份启动本程序以应用计算机配置里的策略，所以建议在用户配置设置策略）。一键关闭课件小工具版本须在1.0.4.24051以上才支持本策略。</string>
+      <string id="TDocKillerNoSaveProfile">不保存设置</string>
+      <string id="TDocKillerNoSaveProfile_Help">不将你的设置保存到注册表。
+
+注意：命令行的内容要优先于策略设置，在用户配置设置的策略优先级高于计算机配置里设置的策略，计算机配置里的策略对所有用户有效。（需要以管理员身份启动本程序以应用计算机配置里的策略，所以建议在用户配置设置策略）。一键关闭课件小工具版本须在1.0.4.24051以上才支持本策略。</string>
+   </stringTable>
+  </resources>
+</policyDefinitionResources>
