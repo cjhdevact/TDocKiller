@@ -115,7 +115,9 @@ Public Class Form1
             SendMessage(Me.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0)
             MovedV = 1
             If Me.Location.X = a.X And Me.Location.Y = a.Y Then
-                Call Button1_Click(sender, e)
+                If e.Button = Windows.Forms.MouseButtons.Left Then
+                    Call Button1_Click(sender, e)
+                End If
             End If
         End If
     End Sub
