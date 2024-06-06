@@ -28,7 +28,7 @@
 设置界面
 
 
-![设置界面（125%缩放）](Assets/uisetting.png)
+![设置界面](Assets/uisetting.png)
 
 
 ------------
