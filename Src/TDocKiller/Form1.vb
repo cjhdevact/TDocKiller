@@ -106,28 +106,21 @@ Public Class Form1
             MovedV = 1
         End If
     End Sub
-    Private Sub TableLayoutPanel1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
-        If UseMoveV = 1 Then
-            ReleaseCapture()
-            SendMessage(Me.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0)
-            MovedV = 1
-        End If
-    End Sub
     Private Sub Button1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button1.MouseDown
         If UseMoveV = 1 Then
+            Dim a As New System.Drawing.Point
+            a.X = Me.Location.X
+            a.Y = Me.Location.Y
             ReleaseCapture()
             SendMessage(Me.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0)
             MovedV = 1
-        End If
-    End Sub
-    Private Sub Button2_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
-        If UseMoveV = 1 Then
-            ReleaseCapture()
-            SendMessage(Me.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0)
-            MovedV = 1
+            If Me.Location.X = a.X And Me.Location.Y = a.Y Then
+                Call Button1_Click(sender, e)
+            End If
         End If
     End Sub
     Sub disbfu()
+        DisbFuState = 1
         Form2.Label8.Text = "部分功能由于被管理员禁用而无法使用。"
         Form2.CheckBox1.Enabled = False
         Form2.CheckBox2.Enabled = False
@@ -180,7 +173,7 @@ Public Class Form1
                 If unsavecfgcr = 1 Then
                     UnSaveData = 1
                     If DisbFuState = 1 Then
-                        Form2.Label8.Text = "由于策略设置，你的更改将不会被保存。部分功能由于被管理员禁用而无法使用。"
+                        Form2.Label8.Text = "由于策略设置，你的更改将不会被保存。部分功能已被禁用。"
                     Else
                         Form2.Label8.Text = "由于策略设置，你的更改将不会被保存。"
                     End If
@@ -228,7 +221,7 @@ Public Class Form1
                     If unsavecfg = 1 Then
                         UnSaveData = 1
                         If DisbFuState = 1 Then
-                            Form2.Label8.Text = "由于策略设置，你的更改将不会被保存。部分功能由于被管理员禁用而无法使用。"
+                            Form2.Label8.Text = "由于策略设置，你的更改将不会被保存。部分功能已被禁用。"
                         Else
                             Form2.Label8.Text = "由于策略设置，你的更改将不会被保存。"
                         End If
@@ -247,7 +240,7 @@ Public Class Form1
         Try
             If Command().ToLower = "/nosaveprofile" Then
                 If DisbFuState = 1 Then
-                    Form2.Label8.Text = "当前你的更改将不会被保存。部分功能由于被管理员禁用而无法使用。"
+                    Form2.Label8.Text = "当前你的更改将不会被保存。部分功能已被禁用。"
                 Else
                     Form2.Label8.Text = "当前你的更改将不会被保存。"
                 End If
@@ -394,15 +387,15 @@ Public Class Form1
             If (Not mykey Is Nothing) Then
                 Me.UseMoveV = mykey.GetValue("EnableDrag", -1)
                 If Me.UseMoveV = -1 Then
-                    RegKeyModule.AddReg("Software\CJH\TDocKiller\Settings", "EnableDrag", 0, RegistryValueKind.DWord, "HKCU")
-                    Me.UseMoveV = 0
+                    RegKeyModule.AddReg("Software\CJH\TDocKiller\Settings", "EnableDrag", 1, RegistryValueKind.DWord, "HKCU")
+                    Me.UseMoveV = 1
                 ElseIf Me.UseMoveV > 1 Then
-                    RegKeyModule.AddReg("Software\CJH\TDocKiller\Settings", "EnableDrag", 0, RegistryValueKind.DWord, "HKCU")
-                    Me.UseMoveV = 0
+                    RegKeyModule.AddReg("Software\CJH\TDocKiller\Settings", "EnableDrag", 1, RegistryValueKind.DWord, "HKCU")
+                    Me.UseMoveV = 1
                 End If
             Else
-                RegKeyModule.AddReg("Software\CJH\TDocKiller\Settings", "EnableDrag", 0, RegistryValueKind.DWord, "HKCU")
-                Me.UseMoveV = 0
+                RegKeyModule.AddReg("Software\CJH\TDocKiller\Settings", "EnableDrag", 1, RegistryValueKind.DWord, "HKCU")
+                Me.UseMoveV = 1
             End If
 
             '////////////////////////////////////////////////////////////////////////////////////
