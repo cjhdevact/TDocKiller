@@ -116,7 +116,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe /topbar" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe /topbar" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
@@ -125,7 +125,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe /bottombar" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe /bottombar" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
@@ -134,7 +134,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe /leftbar" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe /leftbar" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
@@ -143,7 +143,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
@@ -152,7 +152,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe /lefttopbar" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe /lefttopbar" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
@@ -161,7 +161,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe /righttopbar" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe /righttopbar" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
@@ -170,7 +170,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe /leftbottombar" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe /leftbottombar" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
@@ -179,7 +179,7 @@ cls
 echo ====================================================
 echo             一键关闭课件小工具自动启动管理
 echo ====================================================
-Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%windir%\TDocKiller.exe /rightbottombar" /f
+Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /t REG_SZ /d "%programfiles%\CJH\TDocKiller\TDocKiller.exe /rightbottombar" /f
 echo 添加成功，任意键返回... & pause > nul
 goto main
 
