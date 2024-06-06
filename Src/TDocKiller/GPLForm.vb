@@ -1,5 +1,5 @@
 ﻿'****************************************************************************
-'    TimeControl
+'    TDocKiller
 '    Copyright (C) 2022-2024 CJH.
 '
 '    This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 '****************************************************************************
 '/*****************************************************\
 '*                                                     *
-'*     TimeControl - GPLForm.vb                        *
+'*     TDocKiller - GPLForm.vb                         *
 '*                                                     *
 '*     Copyright (c) CJH.                              *
 '*                                                     *

@@ -436,7 +436,8 @@ Public Class Form1
 
 
         Call formatcolorcur()
-        'Call Form2.formatcolorcurset()
+        Call Form2.formatcolorcurset()
+        Call GPLForm.formatcolorcursetmsg()
 
         MovedV = 0
 
@@ -998,6 +999,7 @@ Public Class Form1
                 regkey.Close()
                 Call formatcolorcur()
                 Call Form2.formatcolorcurset()
+                Call GPLForm.formatcolorcursetmsg()
             End If
         End If
     End Sub

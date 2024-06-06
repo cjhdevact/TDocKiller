@@ -180,7 +180,7 @@ haozip,360zip,MicrosoftEdge
 /righttopbar 显示在屏幕右上角 
 /leftbottombar 显示在屏幕左下角 
 /rightbottombar 显示在屏幕右下角 
-/nosaveprofile 以安全模式启动（不保存配置），仅支持显示在左侧
+/nosaveprofile 以安全模式启动（不保存配置），仅支持显示在右侧
 
 部分功能可能因为策略设置而不可用。命令行的内容要优先于策略设置，为单一用户设置的策略优先级高于针对所有用户设置的策略（需要以管理员身份启动本程序以应用针对所有用户设置的策略）。</value>
   </data>
