@@ -1,6 +1,6 @@
 # TDocKiller - 一键关闭课件小工具
 
-一款为方便电教委员在老师下课时迅速关闭课件而开发的工具。
+一款为方便在下课时迅速关闭课件而开发的工具。
 
 
 转到[发布页](https://github.com/cjhdevact/TDocKiller/releases)下载程序或源代码。
