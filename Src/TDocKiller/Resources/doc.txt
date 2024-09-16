@@ -1,0 +1,54 @@
+一、目前支持关闭包括以下关键字名称的程序：
+  1.Microsoft Office:
+    WINWORD,EXCEL,POWERPNT
+  2.WPS:
+    wps,et,wpp,wpspdf,wpsoffice,wpspic
+  3.浏览器（Chrome，Chromium，Edge，Firefox，360系列，2345系列，心愿浏览器，UC浏览器，
+    夸克浏览器，IE，QQ浏览器，希沃浏览器，联想浏览器，搜狗浏览器）
+    msedge,chrome,firefox,360chrome,360se,theworld,liebao,qingniao,Twinkstar,UCBrowser,
+    UCService,2345Explorer,quark,iexplore,QQBrowser,Chromium,SeewoBrowser,360chromex,
+    360aibrowser,SLBrowser,SLB,SogouExplorer,MicrosoftEdge
+  4.播放器以及影音应用
+  (1)PotPlayer
+    PotPlayer,PotPlayerMini,PotPlayerMini64
+  (2)系统的自带播放器
+    Microsoft.Media.Player,Groove,wmplayer,Video.UI
+  (3)QQ影音，暴风影音，央视影音，腾讯视频，酷狗，酷我，爱奇艺，优酷
+    QQPlayer,baofeng,Cbox,qyplayer,QQLive,kugou,kuwomusic,StormPlayer,YOUKU,YoukuNplayer,
+    AlibabaProtectCon,cloudmusic
+  5.教学软件
+  (1)希沃
+    EasiNote,EasiCamera
+  (2)嘉宏高拍仪
+    NimoNavigator,CamShow,ScreenBoard,Nimo
+  (3)鸿合
+    HiteCamera,HitePai
+  (4)联想
+    Lenovo.Smart.BoardTools,Lenovo.Smart.SubjectTools,SmartClass,SmartClassPlayer,
+    SmartClassService,SmartClassShell,SmartRecorder,BlackboardWriting,DesktopDraw,HTDCom,
+    ScreenRecord,VSKY
+  (5)外研社电子课本
+    db
+  6.通讯工具
+    Wechat,QQ
+  7.工具类
+  (1)照片查看器
+    PhotosApp,PhotosService,Microsoft.Photos,rundll32,dllhost
+  (2)系统工具（相机，录音机，计算器，记事本，画图，截图工具）
+    WindowsCamera,SoundRec,SoundRecorder,CalculatorApp,calc,notepad,mspaint,SnippingTool,
+    ScreenSketch
+  (3)压缩软件（WinRar，WinZip，7z，BandZip，好压，360压缩，快压）
+    winrar,winzip,7z,7zFM,bandzip,nanazip,haozip,360zip,kuaizip
+二、目前支持参数
+  /leftbar 显示在屏幕左侧 
+  /rightbar 显示在屏幕右侧 
+  /topbar 显示在屏幕顶部
+  /bottombar 显示在屏幕底部
+  /lefttopbar 显示在屏幕左上角 
+  /righttopbar 显示在屏幕右上角 
+  /leftbottombar 显示在屏幕左下角 
+  /rightbottombar 显示在屏幕右下角 
+  /nosaveprofile 以安全模式启动（不保存配置），仅支持显示在右侧
+
+      部分功能可能因为策略设置而不可用。命令行的内容要优先于策略设置，为单一用户设置的策略
+  优先级高于针对所有用户设置的策略（需要以管理员身份启动本程序以应用针对所有用户设置的策略）。

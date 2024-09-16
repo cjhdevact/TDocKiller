@@ -59,5 +59,48 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  查找类似 一、目前支持关闭包括以下关键字名称的程序：
+        '''  1.Microsoft Office:
+        '''    WINWORD,EXCEL,POWERPNT
+        '''  2.WPS:
+        '''    wps,et,wpp,wpspdf,wpsoffice,wpspic
+        '''  3.浏览器（Chrome，Chromium，Edge，Firefox，360系列，2345系列，心愿浏览器，UC浏览器，
+        '''    夸克浏览器，IE，QQ浏览器，希沃浏览器，联想浏览器，搜狗浏览器）
+        '''    msedge,chrome,firefox,360chrome,360se,theworld,liebao,qingniao,Twinkstar,UCBrowser,
+        '''    UCService,2345Explorer,quark,iexplore,QQBrowser,Chromium,SeewoBrowser,360chromex,
+        '''    360aibrowser,SLBrowser,SLB,SogouExplorer,MicrosoftEdge
+        '''  4.播放器以及影音应用
+        '''  (1)PotPlayer
+        '''    PotPlayer,PotP [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property DocText() As String
+            Get
+                Return ResourceManager.GetString("DocText", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似                     GNU GENERAL PUBLIC LICENSE
+        '''                       Version 3, 29 June 2007
+        '''
+        ''' Copyright (C) 2007 Free Software Foundation, Inc. &lt;http://fsf.org/&gt;
+        ''' Everyone is permitted to copy and distribute verbatim copies
+        ''' of this license document, but changing it is not allowed.
+        '''
+        '''                            Preamble
+        '''
+        '''  The GNU General Public License is a free, copyleft license for
+        '''software and other kinds of works.
+        '''
+        '''  The licenses for most software and other practical works are designed
+        '''to [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property GPL3() As String
+            Get
+                Return ResourceManager.GetString("GPL3", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("一键关闭课件小工具")> 
 <Assembly: AssemblyDescription("一键关闭课件小工具")> 
 <Assembly: AssemblyCompany("CJH")> 
-<Assembly: AssemblyProduct("TDocKiller")> 
+<Assembly: AssemblyProduct("一键关闭课件小工具")> 
 <Assembly: AssemblyCopyright("Copyright © 2023-2024 CJH. All Rights Reserved.")> 
 <Assembly: AssemblyTrademark("")> 
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.4.24051")> 
-<Assembly: AssemblyFileVersion("1.0.4.24051")> 
+<Assembly: AssemblyVersion("1.0.5.24091")> 
+<Assembly: AssemblyFileVersion("1.0.5.24091")> 

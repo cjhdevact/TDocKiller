@@ -81,11 +81,13 @@ Public Class Form1
     Public CurState As Integer
     Public MovedV As Integer
     Public UseMoveV As Integer
-    Public TargetNames(78) As String
+    Public TargetNames(96) As String
     Public UnSupportDarkSys As Integer
     Public UnSaveData As Integer
     Public DisbFuState As Integer
     Public ShowModeTips As Integer
+    Public CloseAppThread As New System.Threading.Thread(AddressOf CloseApp)
+    Delegate Sub MyBut(ByVal StateText As String)
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         If MovedV <> 1 Then
             If Me.Location <> a Then
@@ -444,77 +446,95 @@ Public Class Form1
         TargetNames(5) = "wpp"
         TargetNames(6) = "wpspdf"
         TargetNames(7) = "wpsoffice"
-        TargetNames(8) = "msedge"
-        TargetNames(9) = "chrome"
-        TargetNames(10) = "firefox"
+        TargetNames(8) = "wpspic"
+        TargetNames(9) = "Wechat"
+        TargetNames(10) = "QQ"
         TargetNames(11) = "EasiNote"
         TargetNames(12) = "EasiCamera"
-        TargetNames(13) = "Wechat"
-        TargetNames(14) = "db"
-        TargetNames(15) = "Cbox"
-        TargetNames(16) = "qyplayer"
-        TargetNames(17) = "QQLive"
-        TargetNames(18) = "kugou"
-        TargetNames(19) = "kuwomusic"
-        TargetNames(20) = "wpspic"
-        TargetNames(21) = "iexplore"
-        TargetNames(22) = "PotPlayer"
-        TargetNames(23) = "PotPlayerMini"
-        TargetNames(24) = "PhotosApp"
-        TargetNames(25) = "PhotosService"
-        TargetNames(26) = "Microsoft.Photos"
-        TargetNames(27) = "Microsoft.Media.Player"
-        TargetNames(28) = "Groove"
-        TargetNames(29) = "WindowsCamera"
-        TargetNames(30) = "SoundRec"
-        TargetNames(31) = "CalculatorApp"
-        TargetNames(32) = "calc"
-        TargetNames(33) = "notepad"
-        TargetNames(34) = "rundll32"
-        TargetNames(35) = "dllhost"
-        TargetNames(36) = "mspaint"
-        TargetNames(37) = "wmplayer"
-        TargetNames(38) = "Video.UI"
-        TargetNames(39) = "SnippingTool"
-        TargetNames(40) = "PotPlayerMini64"
-        TargetNames(41) = "360chrome"
-        TargetNames(42) = "360se"
-        TargetNames(43) = "winrar"
-        TargetNames(44) = "winzip"
-        TargetNames(45) = "7z"
-        TargetNames(46) = "7zFM"
-        TargetNames(47) = "bandzip"
-        TargetNames(48) = "theworld"
-        TargetNames(49) = "liebao"
-        TargetNames(50) = "qingniao"
-        TargetNames(51) = "Twinkstar"
-        TargetNames(52) = "UCBrowser"
-        TargetNames(53) = "UCService"
-        TargetNames(54) = "2345Explorer"
-        TargetNames(55) = "quark"
-        TargetNames(56) = "iexplore"
-        TargetNames(57) = "QQBrowser"
-        TargetNames(58) = "Chromium"
-        TargetNames(59) = "SeewoBrowser"
-        TargetNames(60) = "360chromex"
-        TargetNames(61) = "360aibrowser"
+        TargetNames(13) = "NimoNavigator"
+        TargetNames(14) = "CamShow"
+        TargetNames(15) = "ScreenBoard"
+        TargetNames(16) = "Nimo"
+        TargetNames(17) = "HiteCamera"
+        TargetNames(18) = "HitePai"
+        TargetNames(19) = "Lenovo.Smart.BoardTools"
+        TargetNames(20) = "Lenovo.Smart.SubjectTools"
+        TargetNames(21) = "SmartClass"
+        TargetNames(22) = "SmartClassPlayer"
+        TargetNames(23) = "SmartClassService"
+        TargetNames(24) = "SmartClassShell"
+        TargetNames(25) = "SmartRecorder"
+        TargetNames(26) = "BlackboardWriting"
+        TargetNames(27) = "DesktopDraw"
+        TargetNames(28) = "HTDCom"
+        TargetNames(29) = "ScreenRecord"
+        TargetNames(30) = "VSKY"
+        TargetNames(31) = "db"
+        TargetNames(32) = "msedge"
+        TargetNames(33) = "chrome"
+        TargetNames(34) = "firefox"
+        TargetNames(35) = "360chrome"
+        TargetNames(36) = "360se"
+        TargetNames(37) = "theworld"
+        TargetNames(38) = "liebao"
+        TargetNames(39) = "qingniao"
+        TargetNames(40) = "Twinkstar"
+        TargetNames(41) = "UCBrowser"
+        TargetNames(42) = "UCService"
+        TargetNames(43) = "2345Explorer"
+        TargetNames(44) = "quark"
+        TargetNames(45) = "iexplore"
+        TargetNames(46) = "QQBrowser"
+        TargetNames(47) = "Chromium"
+        TargetNames(48) = "SeewoBrowser"
+        TargetNames(49) = "360chromex"
+        TargetNames(50) = "360aibrowser"
+        TargetNames(51) = "SLBrowser"
+        TargetNames(52) = "SLB"
+        TargetNames(53) = "SogouExplorer"
+        TargetNames(54) = "MicrosoftEdge"
+        TargetNames(55) = "PotPlayer"
+        TargetNames(56) = "PotPlayerMini"
+        TargetNames(57) = "PotPlayerMini64"
+        TargetNames(58) = "Microsoft.Media.Player"
+        TargetNames(59) = "Groove"
+        TargetNames(60) = "wmplayer"
+        TargetNames(61) = "Video.UI"
         TargetNames(62) = "QQPlayer"
         TargetNames(63) = "baofeng"
-        TargetNames(64) = "SLBrowser"
-        TargetNames(65) = "SLB"
-        TargetNames(66) = "QQ"
-        TargetNames(67) = "StormPlayer"
-        TargetNames(68) = "SogouExplorer"
-        TargetNames(69) = "NimoNavigator"
-        TargetNames(70) = "CamShow"
-        TargetNames(71) = "ScreenBoard"
-        TargetNames(72) = "Nimo"
-        TargetNames(73) = "HiteCamera"
-        TargetNames(74) = "HitePai"
-        TargetNames(75) = "nanazip"
-        TargetNames(76) = "haozip"
-        TargetNames(77) = "360zip"
-        TargetNames(78) = "MicrosoftEdge"
+        TargetNames(64) = "Cbox"
+        TargetNames(65) = "qyplayer"
+        TargetNames(66) = "QQLive"
+        TargetNames(67) = "kugou"
+        TargetNames(68) = "kuwomusic"
+        TargetNames(69) = "StormPlayer"
+        TargetNames(70) = "YOUKU"
+        TargetNames(71) = "YoukuNplayer"
+        TargetNames(72) = "AlibabaProtectCon"
+        TargetNames(73) = "cloudmusic"
+        TargetNames(74) = "PhotosApp"
+        TargetNames(75) = "PhotosService"
+        TargetNames(76) = "Microsoft.Photos"
+        TargetNames(77) = "rundll32"
+        TargetNames(78) = "dllhost"
+        TargetNames(79) = "WindowsCamera"
+        TargetNames(80) = "SoundRec"
+        TargetNames(81) = "SoundRecorder"
+        TargetNames(82) = "CalculatorApp"
+        TargetNames(83) = "calc"
+        TargetNames(84) = "notepad"
+        TargetNames(85) = "mspaint"
+        TargetNames(86) = "SnippingTool"
+        TargetNames(87) = "ScreenSketch"
+        TargetNames(88) = "winrar"
+        TargetNames(89) = "winzip"
+        TargetNames(90) = "7z"
+        TargetNames(91) = "7zFM"
+        TargetNames(92) = "bandzip"
+        TargetNames(93) = "nanazip"
+        TargetNames(94) = "haozip"
+        TargetNames(95) = "360zip"
+        TargetNames(96) = "kuaizip"
 
         Dim disi As Graphics = Me.CreateGraphics()
         Timer1.Enabled = True
@@ -726,67 +746,72 @@ Public Class Form1
     'Me.Dispose()
     'End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-        If CloseStateV = 0 Then
-            If MessageBox.Show("确定要关闭课件吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                Button1.Enabled = False
-                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                    Button1.Text = "正在关闭"
-                Else
-                    'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                    Button1.Text = "正在关闭"
-                End If
-                Button1.Enabled = True
-                MessageBox.Show("正在关闭课件，在按钮""正在关闭""文字变化之前，请不要再点击关闭按钮，以免重复关闭。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Try
-                    For Each TargetNamea As String In TargetNames
-                        Shell("taskkill.exe /im " & TargetNamea & ".exe", AppWinStyle.Hide)
-                        Shell("taskkill.exe /im " & TargetNamea & "*", AppWinStyle.Hide)
-                        Shell("taskkill.exe /f /im " & TargetNamea & ".exe", AppWinStyle.Hide)
-                        Shell("taskkill.exe /f /im " & TargetNamea & "*", AppWinStyle.Hide, True)
-                    Next
+    Sub SetButText(ByVal StateText As String)
+        If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+            Button1.Text = StateText
+        Else
+            'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
+            Button1.Text = StateText
+        End If
+    End Sub
 
-                    For Each TargetName As String In TargetNames
-                        'Dim TargetName As String = "fmp" '存储进程名为文本型，注：进程名不加扩展名
-                        Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
-                        Dim TargetPath As String '存储进程路径为文本型
-                        If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
-                            For i = 0 To TargetKill.Length - 1
-                                TargetPath = TargetKill(i).MainModule.FileName
-                                TargetKill(i).Kill()
-                            Next
-                            'ElseIf TargetKill.Length = 0 Then '判断进程名的数量，没有发现进程直接弹窗。不需要的，可直接删掉该If子句
-                            '   Exit Sub
-                        ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
-                            TargetKill(0).Kill()
-                        End If
-                        'Me.Dispose(1) '关闭自身进程
+    Sub CloseApp()
+        Me.Invoke(New MyBut(AddressOf SetButText), "正在关闭")
+        'Button1.Enabled = True
+        'MessageBox.Show("正在关闭课件，在按钮""正在关闭""文字变化之前，请不要再点击关闭按钮，以免重复关闭。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Try
+            For Each TargetNamea As String In TargetNames
+                Shell("taskkill.exe /im " & TargetNamea & ".exe", AppWinStyle.Hide)
+                Shell("taskkill.exe /im " & TargetNamea & "*", AppWinStyle.Hide)
+                Shell("taskkill.exe /f /im " & TargetNamea & ".exe", AppWinStyle.Hide)
+                Shell("taskkill.exe /f /im " & TargetNamea & "*", AppWinStyle.Hide, True)
+            Next
+
+            For Each TargetName As String In TargetNames
+                'Dim TargetName As String = "fmp" '存储进程名为文本型，注：进程名不加扩展名
+                Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
+                Dim TargetPath As String '存储进程路径为文本型
+                If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+                    For i = 0 To TargetKill.Length - 1
+                        TargetPath = TargetKill(i).MainModule.FileName
+                        TargetKill(i).Kill()
                     Next
-                Catch ex As Exception
-                End Try
-                RenS = 0
-                Timer3.Enabled = False
+                    'ElseIf TargetKill.Length = 0 Then '判断进程名的数量，没有发现进程直接弹窗。不需要的，可直接删掉该If子句
+                    '   Exit Sub
+                ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+                    TargetKill(0).Kill()
+                End If
+                'Me.Dispose(1) '关闭自身进程
+            Next
+        Catch ex As Exception
+        End Try
+        Me.Invoke(New MyBut(AddressOf SetButText), "关闭课件")
+    End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        If Not Button1.Text = "正在关闭" Then
+            If CloseStateV = 0 Then
+                If MessageBox.Show("确定要关闭课件吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                    'Button1.Enabled = False
+                    CloseAppThread.Start()
+                    RenS = 0
+                    Timer3.Enabled = False
+                    CloseStateV = 0
+                    Form2.Button3.Enabled = True
+                    CurState = 0
+                End If
+            Else
                 CloseStateV = 0
                 Form2.Button3.Enabled = True
+                Timer3.Enabled = False
                 CurState = 0
+                RenS = 0
                 If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
                     Button1.Text = "关闭课件"
                 Else
                     'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
                     Button1.Text = "关闭课件"
                 End If
-            End If
-        Else
-            CloseStateV = 0
-            Form2.Button3.Enabled = True
-            Timer3.Enabled = False
-            CurState = 0
-            RenS = 0
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "关闭课件"
-            Else
-                'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                Button1.Text = "关闭课件"
             End If
         End If
     End Sub
@@ -798,80 +823,81 @@ Public Class Form1
             CurState = 0
             RenS = -1
 
-            ''' 旧版说明
-            '目前支持关闭的程序名称：Word（WINWORD.EXE）Excel（EXCEL.EXE）PowerPoint（POWERPNT.EXE）WPS 文字（wps.exe）WPS 表格（et.exe）WPS 表格（et.exe）WPS 演示（wpp.exe）WPS PDF（wpspdf.exe）WPS Office（wpsoffice.exe）Edge（msedge.exe）Chrome（chrome.exe）FireFox（firefox.exe）希沃白板（EasiNote.exe）希沃视频展台（EasiCamera.exe）微信（Wechat.exe）外研电子课本（db.exe）
-            '''
+            '''' 旧版说明
+            ''目前支持关闭的程序名称：Word（WINWORD.EXE）Excel（EXCEL.EXE）PowerPoint（POWERPNT.EXE）WPS 文字（wps.exe）WPS 表格（et.exe）WPS 表格（et.exe）WPS 演示（wpp.exe）WPS PDF（wpspdf.exe）WPS Office（wpsoffice.exe）Edge（msedge.exe）Chrome（chrome.exe）FireFox（firefox.exe）希沃白板（EasiNote.exe）希沃视频展台（EasiCamera.exe）微信（Wechat.exe）外研电子课本（db.exe）
+            ''''
 
-            '支持关闭程序关键字列表
-            'WINWORD,EXCEL,POWERPNT,
-            'wps,et,wpp,
-            'wpspdf,wpsoffice,msedge,
-            'chrome,firefox,EasiNote,
-            'EasiCamera,Wechat,db,
-            'Cbox,qyplayer,QQLive,
-            'kugou,kuwomusic,wpspic,
-            'iexplore,PotPlayer,PotPlayerMini,
-            'PhotosApp,PhotosService,Microsoft.Photos,
-            'Microsoft.Media.Player,
-            'Groove,WindowsCamera,SoundRec,
-            'CalculatorApp,calc,notepad,
-            'rundll32,dllhost,mspaint,
-            'wmplayer,Video.UI,SnippingTool,
-            'PotPlayerMini64,360chrome,360se,
-            'winrar,winzip,7z,
-            '7zFM,bandzip,theworld,
-            'liebao,qingniao,Twinkstar,
-            'UCBrowser,UCService,2345Explorer,
-            'quark,iexplore,QQBrowser,
-            'Chromium,SeewoBrowser,360chromex,
-            '360aibrowser,QQPlayer,baofeng,
-            'SLBrowser,SLB,QQ,
-            'StormPlayer,SogouExplorer,NimoNavigator,
-            'CamShow,ScreenBoard,Nimo,
-            'HiteCamera,HitePai,nanazip,
-            'haozip,360zip,MicrosoftEdge
-            Button1.Enabled = False
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "正在关闭"
-            Else
-                'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                Button1.Text = "正在关闭"
-            End If
-            Button1.Enabled = True
-            MessageBox.Show("正在关闭课件，在按钮""正在关闭""文字变化之前，请不要再点击关闭按钮，以免重复关闭。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Try
-                For Each TargetNamea As String In TargetNames
-                    Shell("taskkill.exe /im " & TargetNamea & ".exe", AppWinStyle.Hide)
-                    Shell("taskkill.exe /im " & TargetNamea & "*", AppWinStyle.Hide)
-                    Shell("taskkill.exe /f /im " & TargetNamea & ".exe", AppWinStyle.Hide)
-                    Shell("taskkill.exe /f /im " & TargetNamea & "*", AppWinStyle.Hide, True)
-                Next
+            ''支持关闭程序关键字列表
+            ''WINWORD,EXCEL,POWERPNT,
+            ''wps,et,wpp,
+            ''wpspdf,wpsoffice,msedge,
+            ''chrome,firefox,EasiNote,
+            ''EasiCamera,Wechat,db,
+            ''Cbox,qyplayer,QQLive,
+            ''kugou,kuwomusic,wpspic,
+            ''iexplore,PotPlayer,PotPlayerMini,
+            ''PhotosApp,PhotosService,Microsoft.Photos,
+            ''Microsoft.Media.Player,
+            ''Groove,WindowsCamera,SoundRec,
+            ''CalculatorApp,calc,notepad,
+            ''rundll32,dllhost,mspaint,
+            ''wmplayer,Video.UI,SnippingTool,
+            ''PotPlayerMini64,360chrome,360se,
+            ''winrar,winzip,7z,
+            ''7zFM,bandzip,theworld,
+            ''liebao,qingniao,Twinkstar,
+            ''UCBrowser,UCService,2345Explorer,
+            ''quark,iexplore,QQBrowser,
+            ''Chromium,SeewoBrowser,360chromex,
+            ''360aibrowser,QQPlayer,baofeng,
+            ''SLBrowser,SLB,QQ,
+            ''StormPlayer,SogouExplorer,NimoNavigator,
+            ''CamShow,ScreenBoard,Nimo,
+            ''HiteCamera,HitePai,nanazip,
+            ''haozip,360zip,MicrosoftEdge
+            'Button1.Enabled = False
+            'If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+            '    Button1.Text = "正在关闭"
+            'Else
+            '    'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
+            '    Button1.Text = "正在关闭"
+            'End If
+            'Button1.Enabled = True
+            'MessageBox.Show("正在关闭课件，在按钮""正在关闭""文字变化之前，请不要再点击关闭按钮，以免重复关闭。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'Try
+            '    For Each TargetNamea As String In TargetNames
+            '        Shell("taskkill.exe /im " & TargetNamea & ".exe", AppWinStyle.Hide)
+            '        Shell("taskkill.exe /im " & TargetNamea & "*", AppWinStyle.Hide)
+            '        Shell("taskkill.exe /f /im " & TargetNamea & ".exe", AppWinStyle.Hide)
+            '        Shell("taskkill.exe /f /im " & TargetNamea & "*", AppWinStyle.Hide, True)
+            '    Next
 
-                For Each TargetName As String In TargetNames
-                    'Dim TargetName As String = "fmp" '存储进程名为文本型，注：进程名不加扩展名
-                    Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
-                    Dim TargetPath As String '存储进程路径为文本型
-                    If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
-                        For i = 0 To TargetKill.Length - 1
-                            TargetPath = TargetKill(i).MainModule.FileName
-                            TargetKill(i).Kill()
-                        Next
-                        'ElseIf TargetKill.Length = 0 Then '判断进程名的数量，没有发现进程直接弹窗。不需要的，可直接删掉该If子句
-                        '   Exit Sub
-                    ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
-                        TargetKill(0).Kill()
-                    End If
-                    'Me.Dispose(1) '关闭自身进程
-                Next
-            Catch ex As Exception
-            End Try
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "关闭课件"
-            Else
-                'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                Button1.Text = "关闭课件"
-            End If
-            Form2.Button3.Enabled = True
+            '    For Each TargetName As String In TargetNames
+            '        'Dim TargetName As String = "fmp" '存储进程名为文本型，注：进程名不加扩展名
+            '        Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
+            '        Dim TargetPath As String '存储进程路径为文本型
+            '        If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+            '            For i = 0 To TargetKill.Length - 1
+            '                TargetPath = TargetKill(i).MainModule.FileName
+            '                TargetKill(i).Kill()
+            '            Next
+            '            'ElseIf TargetKill.Length = 0 Then '判断进程名的数量，没有发现进程直接弹窗。不需要的，可直接删掉该If子句
+            '            '   Exit Sub
+            '        ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+            '            TargetKill(0).Kill()
+            '        End If
+            '        'Me.Dispose(1) '关闭自身进程
+            '    Next
+            'Catch ex As Exception
+            'End Try
+            'If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+            '    Button1.Text = "关闭课件"
+            'Else
+            '    'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
+            '    Button1.Text = "关闭课件"
+            'End If
+            'Form2.Button3.Enabled = True
+            CloseAppThread.Start()
             RenS = 0
             Timer3.Enabled = False
         Else
@@ -889,85 +915,91 @@ Public Class Form1
     End Sub
 
     Private Sub fifteenclose_Click(sender As System.Object, e As System.EventArgs) Handles fifteenclose.Click
-        If CloseStateV = 0 Then
-            CloseStateV = 1
-            Form2.Button3.Enabled = False
-            Timer3.Enabled = True
-            CurState = 1
-            RenS = 15
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "取消 15s"
+        If Not Button1.Text = "正在关闭" Then
+            If CloseStateV = 0 Then
+                CloseStateV = 1
+                Form2.Button3.Enabled = False
+                Timer3.Enabled = True
+                CurState = 1
+                RenS = 15
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "取消 15s"
+                Else
+                    'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s" 
+                    Button1.Text = "取消15s"
+                End If
             Else
-                'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s" 
-                Button1.Text = "取消15s"
-            End If
-        Else
-            CloseStateV = 0
-            Form2.Button3.Enabled = True
-            Timer3.Enabled = False
-            CurState = 0
-            RenS = 0
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "关闭课件"
-            Else
-                'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                Button1.Text = "关闭课件"
+                CloseStateV = 0
+                Form2.Button3.Enabled = True
+                Timer3.Enabled = False
+                CurState = 0
+                RenS = 0
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "关闭课件"
+                Else
+                    'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
+                    Button1.Text = "关闭课件"
+                End If
             End If
         End If
     End Sub
 
     Private Sub thirtyclose_Click(sender As System.Object, e As System.EventArgs) Handles thirtyclose.Click
-        If CloseStateV = 0 Then
-            CloseStateV = 1
-            Form2.Button3.Enabled = False
-            Timer3.Enabled = True
-            CurState = 1
-            RenS = 30
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "取消 30s"
+        If Not Button1.Text = "正在关闭" Then
+            If CloseStateV = 0 Then
+                CloseStateV = 1
+                Form2.Button3.Enabled = False
+                Timer3.Enabled = True
+                CurState = 1
+                RenS = 30
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "取消 30s"
+                Else
+                    'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s"
+                    Button1.Text = "取消30s"
+                End If
             Else
-                'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s"
-                Button1.Text = "取消30s"
-            End If
-        Else
-            CloseStateV = 0
-            Form2.Button3.Enabled = True
-            Timer3.Enabled = False
-            CurState = 0
-            RenS = 0
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "关闭课件"
-            Else
-                'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                Button1.Text = "关闭课件"
+                CloseStateV = 0
+                Form2.Button3.Enabled = True
+                Timer3.Enabled = False
+                CurState = 0
+                RenS = 0
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "关闭课件"
+                Else
+                    'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
+                    Button1.Text = "关闭课件"
+                End If
             End If
         End If
     End Sub
 
     Private Sub sixtyclose_Click(sender As System.Object, e As System.EventArgs) Handles sixtyclose.Click
-        If CloseStateV = 0 Then
-            CloseStateV = 1
-            Form2.Button3.Enabled = False
-            Timer3.Enabled = True
-            CurState = 1
-            RenS = 60
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "取消 60s"
+        If Not Button1.Text = "正在关闭" Then
+            If CloseStateV = 0 Then
+                CloseStateV = 1
+                Form2.Button3.Enabled = False
+                Timer3.Enabled = True
+                CurState = 1
+                RenS = 60
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "取消 60s"
+                Else
+                    'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s" 
+                    Button1.Text = "取消60s"
+                End If
             Else
-                'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s" 
-                Button1.Text = "取消60s"
-            End If
-        Else
-            CloseStateV = 0
-            Form2.Button3.Enabled = True
-            Timer3.Enabled = False
-            CurState = 0
-            RenS = 0
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "关闭课件"
-            Else
-                'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                Button1.Text = "关闭课件"
+                CloseStateV = 0
+                Form2.Button3.Enabled = True
+                Timer3.Enabled = False
+                CurState = 0
+                RenS = 0
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "关闭课件"
+                Else
+                    'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
+                    Button1.Text = "关闭课件"
+                End If
             End If
         End If
     End Sub
@@ -1000,29 +1032,31 @@ Public Class Form1
     End Sub
 
     Private Sub fiveclose_Click(sender As System.Object, e As System.EventArgs) Handles fiveclose.Click
-        If CloseStateV = 0 Then
-            CloseStateV = 1
-            Form2.Button3.Enabled = False
-            Timer3.Enabled = True
-            CurState = 1
-            RenS = 5
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "取消 5s"
+        If Not Button1.Text = "正在关闭" Then
+            If CloseStateV = 0 Then
+                CloseStateV = 1
+                Form2.Button3.Enabled = False
+                Timer3.Enabled = True
+                CurState = 1
+                RenS = 5
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "取消 5s"
+                Else
+                    'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s" 
+                    Button1.Text = "取消5s"
+                End If
             Else
-                'Button1.Text = "取" & vbCrLf & "消" & vbCrLf & "15" & vbCrLf & "s" 
-                Button1.Text = "取消5s"
-            End If
-        Else
-            CloseStateV = 0
-            Form2.Button3.Enabled = True
-            Timer3.Enabled = False
-            CurState = 0
-            RenS = 0
-            If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
-                Button1.Text = "关闭课件"
-            Else
-                'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
-                Button1.Text = "关闭课件"
+                CloseStateV = 0
+                Form2.Button3.Enabled = True
+                Timer3.Enabled = False
+                CurState = 0
+                RenS = 0
+                If Command().ToLower = "/lefttopbar" Or Command().ToLower = "/righttopbar" Or Command().ToLower = "/leftbottombar" Or Command().ToLower = "/rightbottombar" Or Command() = "/topbar" Or Command() = "/bottombar" Then
+                    Button1.Text = "关闭课件"
+                Else
+                    'Button1.Text = "关" & vbCrLf & "闭" & vbCrLf & "课" & vbCrLf & "件"
+                    Button1.Text = "关闭课件"
+                End If
             End If
         End If
     End Sub

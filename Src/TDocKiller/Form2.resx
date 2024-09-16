@@ -121,7 +121,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAA/JJREFUaEPtl8lrFEEUxsuDB/EmguKOC+67cd/3fY37llw8iAc9uAcX8F9QEA9e
+        wgAADsIBFShKgAAAA/JJREFUaEPtl8lrFEEUxsuDB/EmguKOC+67cd/3fY37llw8iAc9uAcX8F9QEA9e
         PUsunlSEJMZkxoDBJZHgxHFA8JCYxDE6XX5VviprenrvMF76g48kr2u6f+/Nq+oXlihRokSJEnnp523G
         u2/4+OZff3fzLR/jGW7uOcs4oYRX/XjG60bAo+Bx8AR4EuP1U+Bp8Ax4FjwHnsd4wwJ4EbwYXsr4y2Xw
         CngVvBpew3jjOngDvBHezPirLfBWeDu8A97JeNNueA+8F97HeO/5iElI+NHwWG/4Bjv8EgN+JcGvtcFv
@@ -140,49 +140,6 @@
         NIrF5/EtVADspbyZi7LZ7HCsOUd/DqzsUGFMt/i/slpbt/VVV9+1amouWtevdwb+PZcbSrdIlChRokT/
         Q4z9AWV0lMNzEmaCAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="TextBox2.Text" xml:space="preserve">
-    <value>目前支持关闭包括以下关键字名称的程序：
-WINWORD,EXCEL,POWERPNT,
-wps,et,wpp,
-wpspdf,wpsoffice,msedge,
-chrome,firefox,EasiNote,
-EasiCamera,Wechat,db,
-Cbox,qyplayer,QQLive,
-kugou,kuwomusic,wpspic,
-iexplore,PotPlayer,PotPlayerMini,
-PhotosApp,PhotosService,Microsoft.Photos,
-Microsoft.Media.Player,
-Groove,WindowsCamera,SoundRec,
-CalculatorApp,calc,notepad,
-rundll32,dllhost,mspaint,
-wmplayer,Video.UI,SnippingTool,
-PotPlayerMini64,360chrome,360se,
-winrar,winzip,7z,
-7zFM,bandzip,theworld,
-liebao,qingniao,Twinkstar,
-UCBrowser,UCService,2345Explorer,
-quark,iexplore,QQBrowser,
-Chromium,SeewoBrowser,360chromex,
-360aibrowser,QQPlayer,baofeng,
-SLBrowser,SLB,QQ,
-StormPlayer,SogouExplorer,NimoNavigator,
-CamShow,ScreenBoard,Nimo,
-HiteCamera,HitePai,nanazip,
-haozip,360zip,MicrosoftEdge
-
-目前支持参数：
-/leftbar 显示在屏幕左侧 
-/rightbar 显示在屏幕右侧 
-/topbar 显示在屏幕顶部
-/bottombar 显示在屏幕底部
-/lefttopbar 显示在屏幕左上角 
-/righttopbar 显示在屏幕右上角 
-/leftbottombar 显示在屏幕左下角 
-/rightbottombar 显示在屏幕右下角 
-/nosaveprofile 以安全模式启动（不保存配置），仅支持显示在右侧
-
-部分功能可能因为策略设置而不可用。命令行的内容要优先于策略设置，为单一用户设置的策略优先级高于针对所有用户设置的策略（需要以管理员身份启动本程序以应用针对所有用户设置的策略）。</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
