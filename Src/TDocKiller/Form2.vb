@@ -363,7 +363,7 @@ errcode:
 
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
         If (MessageBox.Show("确定重启一键关闭课件小工具吗？", "一键关闭课件小工具", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = DialogResult.Yes) Then
-            System.Diagnostics.Process.Start(Application.ExecutablePath)
+            System.Diagnostics.Process.Start(Application.ExecutablePath, Command)
             End
         End If
     End Sub
