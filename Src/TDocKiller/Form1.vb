@@ -86,7 +86,6 @@ Public Class Form1
     Public UnSaveData As Integer
     Public DisbFuState As Integer
     Public ShowModeTips As Integer
-    Public CloseAppThread As New System.Threading.Thread(AddressOf CloseApp)
     Delegate Sub MyBut(ByVal StateText As String)
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         If MovedV <> 1 Then
@@ -793,6 +792,8 @@ Public Class Form1
             If CloseStateV = 0 Then
                 If MessageBox.Show("确定要关闭课件吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                     'Button1.Enabled = False
+                    '线程变量不能写在开头(每一次运行都要创建一次变量)
+                    Dim CloseAppThread As New System.Threading.Thread(AddressOf CloseApp)
                     CloseAppThread.Start()
                     RenS = 0
                     Timer3.Enabled = False
@@ -897,6 +898,8 @@ Public Class Form1
             '    Button1.Text = "关闭课件"
             'End If
             'Form2.Button3.Enabled = True
+            '线程变量不能写在开头(每一次运行都要创建一次变量)
+            Dim CloseAppThread As New System.Threading.Thread(AddressOf CloseApp)
             CloseAppThread.Start()
             RenS = 0
             Timer3.Enabled = False
