@@ -144,7 +144,7 @@ Public Class Form1
         Dim unsavefut As Integer = 0
         Try
 
-            Dim plkeycr As RegistryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\CJH\Policies\TDocKiller", True)
+            Dim plkeycr As RegistryKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\Policies\CJH\TDocKiller", True)
 
             Dim disfucrt As Integer = -1
             If (Not plkeycr Is Nothing) Then
@@ -191,7 +191,7 @@ Public Class Form1
         End Try
 
         Try
-            Dim plkey As RegistryKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\CJH\Policies\TDocKiller", True)
+            Dim plkey As RegistryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\Policies\CJH\TDocKiller", True)
             Dim disfu As Integer
 
             If cdisbfut = 0 Then
@@ -417,7 +417,7 @@ Public Class Form1
                     Me.TopMost = False
                 ElseIf UseTop = 1 Then
                     Me.TopMost = True
-                ElseIf Me.UseMoveV > 1 Then
+                ElseIf UseTop > 1 Then
                     RegKeyModule.AddReg("Software\CJH\TDocKiller\Settings", "AllowTopMost", 1, RegistryValueKind.DWord, "HKCU")
                     Me.TopMost = True
                 End If
@@ -759,28 +759,30 @@ Public Class Form1
         'Button1.Enabled = True
         'MessageBox.Show("正在关闭课件，在按钮""正在关闭""文字变化之前，请不要再点击关闭按钮，以免重复关闭。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Try
-            For Each TargetNamea As String In TargetNames
-                Shell("taskkill.exe /im " & TargetNamea & ".exe", AppWinStyle.Hide)
-                Shell("taskkill.exe /im " & TargetNamea & "*", AppWinStyle.Hide)
-                Shell("taskkill.exe /f /im " & TargetNamea & ".exe", AppWinStyle.Hide)
-                Shell("taskkill.exe /f /im " & TargetNamea & "*", AppWinStyle.Hide, True)
-            Next
-
-            For Each TargetName As String In TargetNames
+            'For Each TargetName As String In TargetNames
+            For i = 0 To TargetNames.Length - 1
                 'Dim TargetName As String = "fmp" '存储进程名为文本型，注：进程名不加扩展名
-                Dim TargetKill() As Process = Process.GetProcessesByName(TargetName) '从进程名获取进程
-                Dim TargetPath As String '存储进程路径为文本型
-                If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
-                    For i = 0 To TargetKill.Length - 1
-                        TargetPath = TargetKill(i).MainModule.FileName
-                        TargetKill(i).Kill()
-                    Next
-                    'ElseIf TargetKill.Length = 0 Then '判断进程名的数量，没有发现进程直接弹窗。不需要的，可直接删掉该If子句
-                    '   Exit Sub
-                ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
-                    TargetKill(0).Kill()
-                End If
+                'Dim TargetKill() As Process = Process.GetProcessesByName(TargetNames(i)) '从进程名获取进程
+                'Dim TargetPath As String '存储进程路径为文本型
+                'If TargetKill.Length > 1 Then '判断进程名的数量，如果同名进程数量在2个以上，用For循环关闭进程。
+                '    For n = 0 To TargetKill.Length - 1
+                '        TargetPath = TargetKill(n).MainModule.FileName
+                '        TargetKill(n).Kill()
+                '    Next
+                '    'ElseIf TargetKill.Length = 0 Then '判断进程名的数量，没有发现进程直接弹窗。不需要的，可直接删掉该If子句
+                '    '   Exit Sub
+                'ElseIf TargetKill.Length = 1 Then '判断进程名的数量，如果只有一个，就不用For循环
+                '    TargetKill(0).Kill()
+                'End If
                 'Me.Dispose(1) '关闭自身进程
+                'Shell("taskkill.exe /im " & TargetName & ".exe", AppWinStyle.Hide)
+                'Shell("taskkill.exe /im " & TargetName & "*", AppWinStyle.Hide)
+                'Shell("taskkill.exe /f /im " & TargetName & ".exe", AppWinStyle.Hide)
+                If i / 2 - Int(i / 2) = 0 Then
+                    Shell("taskkill.exe /f /im " & TargetNames(i) & "*", AppWinStyle.Hide, True)
+                Else
+                    Shell("taskkill.exe /f /im " & TargetNames(i) & "*", AppWinStyle.Hide)
+                End If
             Next
         Catch ex As Exception
         End Try

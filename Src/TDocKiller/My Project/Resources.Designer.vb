@@ -61,7 +61,8 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  查找类似 一、目前支持关闭包括以下关键字名称的程序：
+        '''  查找类似 一、一键关闭课件支持关闭的程序
+        '''  目前支持关闭包括以下关键字名称的程序：
         '''  1.Microsoft Office:
         '''    WINWORD,EXCEL,POWERPNT
         '''  2.WPS:
@@ -73,7 +74,7 @@ Namespace My.Resources
         '''    360aibrowser,SLBrowser,SLB,SogouExplorer,MicrosoftEdge
         '''  4.播放器以及影音应用
         '''  (1)PotPlayer
-        '''    PotPlayer,PotP [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        '''  [字符串的其余部分被截断]&quot;; 的本地化字符串。
         '''</summary>
         Friend ReadOnly Property DocText() As String
             Get

@@ -13,7 +13,7 @@
     </category> -->
   </categories>
   <policies>
-    <policy name="TDocKillerDisbFu" class="Both" displayName="$(string.TDocKillerDisbFu)" explainText="$(string.TDocKillerDisbFu_Help)" key="Software\CJH\Policies\TDocKiller" valueName="DisableFeatures">
+    <policy name="TDocKillerDisbFu" class="Both" displayName="$(string.TDocKillerDisbFu)" explainText="$(string.TDocKillerDisbFu_Help)" key="Software\Policies\CJH\TDocKiller" valueName="DisableFeatures">
       <parentCategory ref="TDocKiller" />
 	  <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <enabledValue>
@@ -23,7 +23,7 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="TDocKillerDisbFuTip" class="Both" displayName="$(string.TDocKillerDisbFuTip)" explainText="$(string.TDocKillerDisbFuTip_Help)" key="Software\CJH\Policies\TDocKiller" valueName="DisableFeaturesTip">
+    <policy name="TDocKillerDisbFuTip" class="Both" displayName="$(string.TDocKillerDisbFuTip)" explainText="$(string.TDocKillerDisbFuTip_Help)" key="Software\Policies\CJH\TDocKiller" valueName="DisableFeaturesTip">
       <parentCategory ref="TDocKiller" />
 	  <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <enabledValue>
@@ -33,7 +33,7 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-	<policy name="TDocKillerNoSaveProfile" class="Both" displayName="$(string.TDocKillerNoSaveProfile)" explainText="$(string.TDocKillerNoSaveProfile_Help)" key="Software\CJH\Policies\TDocKiller" valueName="NoSaveProfile">
+	<policy name="TDocKillerNoSaveProfile" class="Both" displayName="$(string.TDocKillerNoSaveProfile)" explainText="$(string.TDocKillerNoSaveProfile_Help)" key="Software\Policies\CJH\TDocKiller" valueName="NoSaveProfile">
       <parentCategory ref="TDocKiller" />
 	  <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <enabledValue>

@@ -118,7 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DocText" xml:space="preserve">
-    <value>一、目前支持关闭包括以下关键字名称的程序：
+    <value>一、一键关闭课件支持关闭的程序
+  目前支持关闭包括以下关键字名称的程序：
   1.Microsoft Office:
     WINWORD,EXCEL,POWERPNT
   2.WPS:
@@ -133,7 +134,7 @@
     PotPlayer,PotPlayerMini,PotPlayerMini64
   (2)系统的自带播放器
     Microsoft.Media.Player,Groove,wmplayer,Video.UI
-  (3)QQ影音，暴风影音，央视影音，腾讯视频，酷狗，酷我，爱奇艺，优酷
+  (3)QQ影音，暴风影音，央视影音，腾讯视频，酷狗，酷我，爱奇艺，优酷，网易云音乐
     QQPlayer,baofeng,Cbox,qyplayer,QQLive,kugou,kuwomusic,StormPlayer,YOUKU,YoukuNplayer,
     AlibabaProtectCon,cloudmusic
   5.教学软件
@@ -170,8 +171,8 @@
   /rightbottombar 显示在屏幕右下角 
   /nosaveprofile 以安全模式启动（不保存配置），仅支持显示在右侧
 
-      部分功能可能因为策略设置而不可用。命令行的内容要优先于策略设置，为单一用户设置的策略
-  优先级高于针对所有用户设置的策略（需要以管理员身份启动本程序以应用针对所有用户设置的策略）。</value>
+      部分功能可能因为策略设置而不可用。命令行的内容要优先于策略设置，为所有用户设置的策略
+  优先级高于针对单一用户设置的策略。</value>
   </data>
   <data name="GPL3" xml:space="preserve">
     <value>                    GNU GENERAL PUBLIC LICENSE

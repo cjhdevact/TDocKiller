@@ -252,7 +252,6 @@ errcode:
             If Form1.UnSaveData = 0 Then
                 AddReg("Software\CJH\TDocKiller\Settings", "EnableDrag", 1, RegistryValueKind.DWord, "HKCU")
             End If
-
         End If
     End Sub
 
