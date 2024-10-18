@@ -12,6 +12,7 @@ copy %~dp0TDocKiller\files\3-自动启动管理.bat %~dp0TDocKiller-Bin\3-自动启动管理
 copy %~dp0TDocKiller\files\4-添加Userinit级自动启动该程序.bat %~dp0TDocKiller-Bin\4-添加Userinit级自动启动该程序.bat
 copy %~dp0TDocKiller\files\5-删除Userinit级自动启动该程序.bat %~dp0TDocKiller-Bin\5-删除Userinit级自动启动该程序.bat
 copy %~dp0TDocKiller\files\TDocKillerAdmxs.exe %~dp0TDocKiller-Bin\TDocKillerAdmxs.exe
+copy %~dp0TDocKiller\files\TDocKiller.xml %~dp0TDocKiller-Bin\TDocKiller.xml
 
 echo.
 echo 完成！

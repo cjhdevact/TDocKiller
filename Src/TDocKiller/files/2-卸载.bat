@@ -105,6 +105,7 @@ echo.
 echo 如果长时间停留在此操作，请检测是否被杀毒软件拦截。
 echo.
 Reg delete HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /f
+schtasks.exe /Delete /TN \CJH\TDocKiller /F
 del /q "%windir%\TDocKiller.exe"
 del /q "%windir%\PolicyDefinitions\TDocKiller.admx"
 del /q "%windir%\PolicyDefinitions\zh-CN\TDocKiller.adml"
@@ -143,6 +144,7 @@ echo.
 echo 如果长时间停留在此操作，请检测是否被杀毒软件拦截。
 echo.
 Reg delete HKLM\Software\Microsoft\Windows\CurrentVersion\run /v TDocKiller /f
+schtasks.exe /Delete /TN \CJH\TDocKiller /F
 del /q "%windir%\TDocKiller.exe"
 del /q "%windir%\syswow64\TDocKiller.exe"
 del /q "%windir%\PolicyDefinitions\TDocKiller.admx"
