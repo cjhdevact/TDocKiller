@@ -1,4 +1,6 @@
-# TDocKiller - 一键关闭课件小工具
+<h1 align="center">
+  TDocKiller - 一键关闭课件小工具
+</h1>
 
 ## 关于本项目
 
@@ -15,7 +17,7 @@
 
 ## 下载
 
-转到[发布页](https://github.com/cjhdevact/TDocKiller/releases)下载程序或源代码。
+转到[发布页](https://github.com/cjhdevact/TDocKiller/releases/latest)下载程序或源代码。
 
 早期版本的源代码也在发布页里。
 
@@ -34,6 +36,10 @@
 设置界面
 
 ![设置界面](Assets/uisetting.png)
+
+## 开源说明
+
+在修改和由本仓库代码衍生的代码中需要说明“基于 TDocKiller 开发”。
 
 ## 相关项目
 
