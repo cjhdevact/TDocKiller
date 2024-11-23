@@ -63,18 +63,23 @@ Namespace My.Resources
         '''<summary>
         '''  查找类似 一、一键关闭课件支持关闭的程序
         '''  目前支持关闭包括以下关键字名称的程序：
-        '''  1.Microsoft Office:
+        '''  1.办公软件
+        '''  (1)Microsoft Office
         '''    WINWORD,EXCEL,POWERPNT
-        '''  2.WPS:
+        '''  (2)WPS
         '''    wps,et,wpp,wpspdf,wpsoffice,wpspic
-        '''  3.浏览器（Chrome，Chromium，Edge，Firefox，360系列，2345系列，心愿浏览器，UC浏览器，
-        '''    夸克浏览器，IE，QQ浏览器，希沃浏览器，联想浏览器，搜狗浏览器）
-        '''    msedge,chrome,firefox,360chrome,360se,theworld,liebao,qingniao,Twinkstar,UCBrowser,
-        '''    UCService,2345Explorer,quark,iexplore,QQBrowser,Chromium,SeewoBrowser,360chromex,
-        '''    360aibrowser,SLBrowser,SLB,SogouExplorer,MicrosoftEdge
-        '''  4.播放器以及影音应用
-        '''  (1)PotPlayer
-        '''  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        '''  2.通讯工具（微信，QQ，Tim，钉钉）
+        '''    Wechat,Weixin,QQ,Tim,DingTalk
+        '''  3.教学软件
+        '''  (1)希沃
+        '''    EasiNote,EasiCamera
+        '''  (2)嘉宏高拍仪
+        '''    NimoNavigator,CamShow,ScreenBoard,Nimo
+        '''  (3)鸿合
+        '''    HiteCamera,HitePai
+        '''  (4)联想
+        '''    Lenovo.Smart.BoardTools,Lenovo.Smart.SubjectTools,SmartClass,SmartClassPlayer,
+        '''    SmartClassService,SmartClassShell,SmartRecorder,BlackboardWriting,Deskto [字符串的其余部分被截断]&quot;; 的本地化字符串。
         '''</summary>
         Friend ReadOnly Property DocText() As String
             Get
