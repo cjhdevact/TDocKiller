@@ -67,9 +67,9 @@ Namespace My.Resources
         '''  (1)Microsoft Office
         '''    WINWORD,EXCEL,POWERPNT
         '''  (2)WPS
-        '''    wps,et,wpp,wpspdf,wpsoffice,wpspic
+        '''    wps,et,wpp,wpspdf,wpsoffice
         '''  2.通讯工具（微信，QQ，Tim，钉钉）
-        '''    Wechat,Weixin,QQ,Tim,DingTalk
+        '''    Wechat,Weixin,QQ,Tim.exe,DingTalk
         '''  3.教学软件
         '''  (1)希沃
         '''    EasiNote,EasiCamera
@@ -79,7 +79,7 @@ Namespace My.Resources
         '''    HiteCamera,HitePai
         '''  (4)联想
         '''    Lenovo.Smart.BoardTools,Lenovo.Smart.SubjectTools,SmartClass,SmartClassPlayer,
-        '''    SmartClassService,SmartClassShell,SmartRecorder,BlackboardWriting,Deskto [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        '''    SmartClassService,SmartClassShell,SmartRecorder,BlackboardWriting,DesktopDr [字符串的其余部分被截断]&quot;; 的本地化字符串。
         '''</summary>
         Friend ReadOnly Property DocText() As String
             Get
