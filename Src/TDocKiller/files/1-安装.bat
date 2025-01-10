@@ -145,6 +145,12 @@ if "%ad%" == "1" if exist "%systemdrive%\ProgramData\Microsoft\Windows\Start Men
 if "%ad%" == "1" if exist "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\一键关闭课件小工具\管理自动启动.lnk" del /q "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\一键关闭课件小工具\管理自动启动.lnk"
 if "%ad%" == "1" call mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(""%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\一键关闭课件小工具\一键关闭课件小工具.lnk""):b.TargetPath=""%programfiles%\CJH\TDocKiller\TDocKiller.exe"":b.WorkingDirectory=""%programfiles%\CJH\TDocKiller"":b.Save:close")
 
+echo 正在安装软件根证书
+echo.
+echo 如果长时间停留在此操作，请检测是否被杀毒软件拦截。
+echo.
+certmgr.exe -add -c "%~dp0rootcert.cer" -s -r localMachine root
+
 copy /y "%~dp02-卸载.bat" "%programfiles%\CJH\TDocKiller\Uninstall.bat"
 copy /y "%~dp03-自动启动管理.bat" "%programfiles%\CJH\TDocKiller\AutoBootMgr.bat"
 copy /y "%~dp0TDocKiller.xml" "%programfiles%\CJH\TDocKiller\TDocKiller.xml"
@@ -222,6 +228,12 @@ if "%ad%" == "1" if exist "%systemdrive%\ProgramData\Microsoft\Windows\Start Men
 if "%ad%" == "1" if exist "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\一键关闭课件小工具\管理自动启动.lnk" del /q "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\一键关闭课件小工具\管理自动启动.lnk"
 if "%ad%" == "1" call mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(""%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\一键关闭课件小工具\一键关闭课件小工具.lnk""):b.TargetPath=""%programfiles%\CJH\TDocKiller\TDocKiller.exe"":b.WorkingDirectory=""%programfiles%\CJH\TDocKiller"":b.Save:close")
 if "%ad%" == "1" call mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(""%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\一键关闭课件小工具\一键关闭课件小工具（32位）.lnk""):b.TargetPath=""%programfiles%\CJH\TDocKiller\x86\TDocKiller.exe"":b.WorkingDirectory=""%programfiles%\CJH\TDocKiller\x86"":b.Save:close")
+
+echo 正在安装软件根证书
+echo.
+echo 如果长时间停留在此操作，请检测是否被杀毒软件拦截。
+echo.
+certmgr.exe -add -c "%~dp0rootcert.cer" -s -r localMachine root
 
 copy /y "%~dp02-卸载.bat" "%programfiles%\CJH\TDocKiller\Uninstall.bat"
 copy /y "%~dp03-自动启动管理.bat" "%programfiles%\CJH\TDocKiller\AutoBootMgr.bat"

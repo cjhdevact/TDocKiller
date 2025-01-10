@@ -1,6 +1,6 @@
 ﻿'****************************************************************************
 '    TDocKiller
-'    Copyright (C) 2023-2024  CJH
+'    Copyright (C) 2023-2025  CJH
 '
 '    This program is free software: you can redistribute it and/or modify
 '    it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ Public Class Form1
     Public CurState As Integer
     Public MovedV As Integer
     Public UseMoveV As Integer
-    Public TargetNames(109) As String
+    Public TargetNames(110) As String
     Public UnSupportDarkSys As Integer
     Public UnSaveData As Integer
     Public DisbFuState As Integer
@@ -508,45 +508,46 @@ Public Class Form1
         TargetNames(68) = "baofeng"
         TargetNames(69) = "Cbox"
         TargetNames(70) = "qyplayer"
-        TargetNames(71) = "QQLive"
-        TargetNames(72) = "kugou"
-        TargetNames(73) = "kuwomusic"
-        TargetNames(74) = "StormPlayer"
-        TargetNames(75) = "YOUKU"
-        TargetNames(76) = "YoukuNplayer"
-        TargetNames(77) = "AlibabaProtectCon"
-        TargetNames(78) = "cloudmusic"
-        TargetNames(79) = "Photos"
-        TargetNames(80) = "PhotosApp"
-        TargetNames(81) = "PhotosService"
-        TargetNames(82) = "Microsoft.Photos"
-        TargetNames(83) = "rundll32"
-        TargetNames(84) = "dllhost"
-        TargetNames(85) = "photolaunch"
-        TargetNames(86) = "WPSPic"
-        TargetNames(87) = "360Album"
-        TargetNames(88) = "360PicBrowser"
-        TargetNames(89) = "2345Pic"
-        TargetNames(90) = "ACDSee"
-        TargetNames(91) = "FSViewer"
-        TargetNames(92) = "WindowsCamera"
-        TargetNames(93) = "SoundRec"
-        TargetNames(94) = "SoundRecorder"
-        TargetNames(95) = "CalculatorApp"
-        TargetNames(96) = "calc"
-        TargetNames(97) = "notepad"
-        TargetNames(98) = "mspaint"
-        TargetNames(99) = "SnippingTool"
-        TargetNames(100) = "ScreenSketch"
-        TargetNames(101) = "winrar"
-        TargetNames(102) = "winzip"
-        TargetNames(103) = "7z"
-        TargetNames(104) = "7zFM"
-        TargetNames(105) = "bandzip"
-        TargetNames(106) = "nanazip"
-        TargetNames(107) = "haozip"
-        TargetNames(108) = "360zip"
-        TargetNames(109) = "kuaizip"
+        TargetNames(71) = "QyClient"
+        TargetNames(72) = "QQLive"
+        TargetNames(73) = "kugou"
+        TargetNames(74) = "kuwomusic"
+        TargetNames(75) = "StormPlayer"
+        TargetNames(76) = "YOUKU"
+        TargetNames(77) = "YoukuNplayer"
+        TargetNames(78) = "AlibabaProtectCon"
+        TargetNames(79) = "cloudmusic"
+        TargetNames(80) = "Photos"
+        TargetNames(81) = "PhotosApp"
+        TargetNames(82) = "PhotosService"
+        TargetNames(83) = "Microsoft.Photos"
+        TargetNames(84) = "rundll32"
+        TargetNames(85) = "dllhost"
+        TargetNames(86) = "photolaunch"
+        TargetNames(87) = "WPSPic"
+        TargetNames(88) = "360Album"
+        TargetNames(89) = "360PicBrowser"
+        TargetNames(90) = "2345Pic"
+        TargetNames(91) = "ACDSee"
+        TargetNames(92) = "FSViewer"
+        TargetNames(93) = "WindowsCamera"
+        TargetNames(94) = "SoundRec"
+        TargetNames(95) = "SoundRecorder"
+        TargetNames(96) = "CalculatorApp"
+        TargetNames(97) = "calc"
+        TargetNames(98) = "notepad"
+        TargetNames(99) = "mspaint"
+        TargetNames(100) = "SnippingTool"
+        TargetNames(101) = "ScreenSketch"
+        TargetNames(102) = "winrar"
+        TargetNames(103) = "winzip"
+        TargetNames(104) = "7z"
+        TargetNames(105) = "7zFM"
+        TargetNames(106) = "bandzip"
+        TargetNames(107) = "nanazip"
+        TargetNames(108) = "haozip"
+        TargetNames(109) = "360zip"
+        TargetNames(110) = "kuaizip"
 
         Dim disi As Graphics = Me.CreateGraphics()
         Timer1.Enabled = True

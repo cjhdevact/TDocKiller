@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("一键关闭课件小工具")> 
 <Assembly: AssemblyCompany("CJH")> 
 <Assembly: AssemblyProduct("一键关闭课件小工具")> 
-<Assembly: AssemblyCopyright("Copyright © 2023-2024 CJH. All Rights Reserved.")> 
+<Assembly: AssemblyCopyright("Copyright © 2023-2025 CJH. All Rights Reserved.")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.10.24113")> 
-<Assembly: AssemblyFileVersion("1.0.10.24113")> 
+<Assembly: AssemblyVersion("1.0.11.25011")> 
+<Assembly: AssemblyFileVersion("1.0.11.25011")> 

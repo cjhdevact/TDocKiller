@@ -1,6 +1,6 @@
 ﻿'****************************************************************************
 '    TDocKiller
-'    Copyright (C) 2023-2024  CJH
+'    Copyright (C) 2023-2025  CJH
 '
 '    This program is free software: you can redistribute it and/or modify
 '    it under the terms of the GNU General Public License as published by
@@ -157,7 +157,7 @@ errcode:
         'Dim ver2 As String
         'ver1 = My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString & "." & My.Application.Info.Version.Build.ToString
         'ver2 = My.Application.Info.Version.Revision.ToString
-        Label1.Text = "一键关闭课件小工具 版本：" & My.Application.Info.Version.ToString & vbCrLf & "版权所有 © 2023-2024 CJH。"
+        Label1.Text = "一键关闭课件小工具 版本：" & My.Application.Info.Version.ToString & vbCrLf & "版权所有 © 2023-2025 CJH。"
     End Sub
 
     Sub formatcolorcurset()
