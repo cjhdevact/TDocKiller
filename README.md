@@ -1,5 +1,5 @@
 <h1 align="center">
-  TDocKiller - 一键关闭课件小工具
+  <a href="https://github.com/cjhdevact/TDocKiller">TDocKiller - 一键关闭课件小工具</a>
 </h1>
 
 ## 关于本项目
