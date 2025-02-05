@@ -1,0 +1,9 @@
+/Src/.vs/
+
+/Src/*.suo
+
+/Src/TDocKiller-bin/
+
+/Src/TDocKiller/bin/
+
+/Src/TDocKiller/obj/
