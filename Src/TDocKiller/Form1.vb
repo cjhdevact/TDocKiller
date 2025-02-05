@@ -93,7 +93,18 @@ Public Class Form1
                 Me.Location = a
             End If
         End If
+        If Me.TopMost = True Then
+            SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS)
+        End If
     End Sub
+    <DllImport("user32.dll")>
+    Private Shared Function SetWindowPos(ByVal hWnd As IntPtr, ByVal hWndInsertAfter As IntPtr, ByVal X As Integer, ByVal Y As Integer, ByVal cx As Integer, ByVal cy As Integer, ByVal uFlags As UInteger) As Boolean
+    End Function
+    Const HWND_TOPMOST = -1
+    Const SWP_NOSIZE As UInteger = &H1
+    Const SWP_NOMOVE As UInteger = &H2
+    Const TOPMOST_FLAGS As UInteger = SWP_NOMOVE Or SWP_NOSIZE
+
     'API移动窗体
     Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Boolean
     Declare Function ReleaseCapture Lib "user32" Alias "ReleaseCapture" () As Boolean
@@ -803,7 +814,7 @@ Public Class Form1
         Me.Invoke(New MyBut(AddressOf SetButText), "关闭课件")
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         If Not Button1.Text = "正在关闭" Then
             If CloseStateV = 0 Then
                 If MessageBox.Show("确定要关闭课件吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
@@ -833,7 +844,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Timer3_Tick(sender As System.Object, e As System.EventArgs) Handles Timer3.Tick
+    Private Sub Timer3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer3.Tick
         If RenS = 0 Then
             RenS = RenS - 1
             CloseStateV = 0
@@ -933,7 +944,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub fifteenclose_Click(sender As System.Object, e As System.EventArgs) Handles fifteenclose.Click
+    Private Sub fifteenclose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles fifteenclose.Click
         If Not Button1.Text = "正在关闭" Then
             If CloseStateV = 0 Then
                 CloseStateV = 1
@@ -963,7 +974,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub thirtyclose_Click(sender As System.Object, e As System.EventArgs) Handles thirtyclose.Click
+    Private Sub thirtyclose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles thirtyclose.Click
         If Not Button1.Text = "正在关闭" Then
             If CloseStateV = 0 Then
                 CloseStateV = 1
@@ -993,7 +1004,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub sixtyclose_Click(sender As System.Object, e As System.EventArgs) Handles sixtyclose.Click
+    Private Sub sixtyclose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sixtyclose.Click
         If Not Button1.Text = "正在关闭" Then
             If CloseStateV = 0 Then
                 CloseStateV = 1
@@ -1050,7 +1061,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub fiveclose_Click(sender As System.Object, e As System.EventArgs) Handles fiveclose.Click
+    Private Sub fiveclose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles fiveclose.Click
         If Not Button1.Text = "正在关闭" Then
             If CloseStateV = 0 Then
                 CloseStateV = 1
@@ -1079,13 +1090,13 @@ Public Class Form1
             End If
         End If
     End Sub
-    Private Sub NotifyIcon1_MouseDoubleClick(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+    Private Sub NotifyIcon1_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
         Me.Show()
         Timer2.Enabled = False
         NotifyIcon1.Visible = False
     End Sub
 
-    Private Sub shtbar_Click(sender As System.Object, e As System.EventArgs) Handles shtbar.Click
+    Private Sub shtbar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles shtbar.Click
         Me.Show()
         Timer2.Enabled = False
         NotifyIcon1.Visible = False
