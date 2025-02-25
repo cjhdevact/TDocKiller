@@ -86,6 +86,7 @@ Public Class Form1
     Public UnSaveData As Integer
     Public DisbFuState As Integer
     Public ShowModeTips As Integer
+    Public NeedStillTopMost As Integer '是否强制顶置
     Delegate Sub MyBut(ByVal StateText As String)
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         If MovedV <> 1 Then
@@ -94,7 +95,11 @@ Public Class Form1
             End If
         End If
         If Me.TopMost = True Then
-            SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS)
+            If Me.Visible = True Then
+                If NeedStillTopMost = 1 Then
+                    SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS)
+                End If
+            End If
         End If
     End Sub
     <DllImport("user32.dll")>
@@ -141,6 +146,7 @@ Public Class Form1
         Form2.ComboBox2.Enabled = False
     End Sub
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        NeedStillTopMost = 1
         '////////////////////////////////////////////////////////////////////////////////////
         '//
         '//  禁用功能策略注册表读取
@@ -735,7 +741,9 @@ Public Class Form1
         'If MessageBox.Show("确定要关闭时钟吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = MsgBoxResult.Yes Then
         'End
         'End If
+        NeedStillTopMost = 0
         Form2.ShowDialog()
+        NeedStillTopMost = 1
     End Sub
 
     Private Sub Me_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing

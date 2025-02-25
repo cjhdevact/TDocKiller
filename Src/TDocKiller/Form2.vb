@@ -255,9 +255,10 @@ errcode:
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         If MessageBox.Show("确定关闭一键关闭课件小工具吗？", "一键关闭课件小工具 - 提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-            End
+            'End
+            Application.Exit()
         End If
     End Sub
 
@@ -363,7 +364,8 @@ errcode:
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
         If (MessageBox.Show("确定重启一键关闭课件小工具吗？", "一键关闭课件小工具", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = DialogResult.Yes) Then
             System.Diagnostics.Process.Start(Application.ExecutablePath, Command)
-            End
+            Application.Exit()
+            'End
         End If
     End Sub
 
