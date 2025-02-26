@@ -733,6 +733,7 @@ Public Class Form1
 
     Private Sub Timer2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer2.Tick
         Me.Show()
+        Timer1.Enabled = True
         Timer2.Enabled = False
         NotifyIcon1.Visible = False
     End Sub
